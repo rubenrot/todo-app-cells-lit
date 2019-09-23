@@ -45,7 +45,7 @@ class ListItem extends LitElement {
   static get shadyStyles() {
     return `
     .lists {
-        padding-left:350px;
+        /*padding-left:350px;*/
         margin:0 auto;
         max-width:500px;
     }

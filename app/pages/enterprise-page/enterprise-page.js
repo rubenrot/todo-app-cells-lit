@@ -4,6 +4,7 @@ import '@cells-components/cells-template-paper-drawer-panel';
 import '../../elements/lit-elements/add-item.js';
 import '../../elements/lit-elements/list-item.js';
 import 'lodash/lodash.min.js';
+import '../../elements/lit-elements/header-hack.js';
 
 class EnterprisePage extends CellsPage {
   static get is() {
@@ -64,18 +65,27 @@ class EnterprisePage extends CellsPage {
       this.todoList[index].done = !this.todoList[index].done;
       localStorage.setItem('todo-list', JSON.stringify(this.todoList));
     });
+
+    this.subscribe('google-channel', data => {
+      const { fromObj } = data;
+      console.log(data);
+      if(data.page === 'google-page'){
+        console.log('Evento recibido - Enterprise Page');
+      }
+    });
   }
 
   render() {
     return html`
     <style>${this.constructor.shadyStyles}</style>
       
-     <cells-template-paper-drawer-panel header-fixed="" state="active">
+     <cells-template-paper-drawer-panel header-hidden="" state="active">
           <div slot="app__header" class="my-header">
           header
           </div>
           <div slot="app__main" class="todo-app-container">
             <div>
+            <header-hack></header-hack>
                   <add-item></add-item>
                   <list-item .todoList=${this.todoList}></list-item>
             </div>

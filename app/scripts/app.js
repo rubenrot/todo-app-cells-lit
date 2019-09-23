@@ -5,7 +5,8 @@
     routes: {
       'home': '/home',
       'another': '/another',
-      'enterprise': '/'
+      'enterprise': '/enterprise',
+      'google': '/'
     }
   });
 }(document));

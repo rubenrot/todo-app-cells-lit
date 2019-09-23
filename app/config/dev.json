@@ -12,7 +12,7 @@
     "routerLog": false,
     "cordovaScript" : "cordova.js",
     "prplLevel": 1,
-    "initialBundle": ["enterprise"],
+    "initialBundle": ["google"],
     "transpile": true,
     "transpileExclude": ["webcomponentsjs", "moment", "d3", "bgadp*"],
     "enableLitElement": true,

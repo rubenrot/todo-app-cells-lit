@@ -5,4 +5,5 @@
 // ${filledByCellsWithAutoImports}
 import '../pages\/another-page/another-page.js';
 import '../pages\/enterprise-page/enterprise-page.js';
+import '../pages\/google-page/google-page.js';
 import '../pages\/home-page/home-page.js';
