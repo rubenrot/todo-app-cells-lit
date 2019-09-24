@@ -5,9 +5,9 @@ import 'lodash/lodash.min.js';
 import '../../elements/lit-elements/header-hack.js';
 import '../../elements/lit-elements/ajax-hack.js';
 
-class GooglePage extends CellsPage {
+class UsersPage extends CellsPage {
   static get is() {
-    return 'google-page';
+    return 'users-page';
   }
 
   static get properties() {
@@ -36,7 +36,7 @@ class GooglePage extends CellsPage {
           <div slot="app__main" class="todo-app-container">
             <div>
                <header-hack></header-hack>
-               <ajax-hack></ajax-hack>
+               <ajax-hack></ajax-hack>             
             </div>
           </div>
         </cells-template-paper-drawer-panel>
@@ -46,8 +46,50 @@ class GooglePage extends CellsPage {
 
   static get shadyStyles() {
     return `
+    #main-image{
+    height: 0;
+    overflow: hidden;
+    background: red;
+   -moz-animation: slide 1s ease 3.5s backwards;
+   -webkit-animation: slide 1s ease 3.5s backwards;
+   -o-animation: slide 1s ease 3.5s backwards;
+   -ms-animation: slide 1s ease 3.5s backwards;
+    animation: slide 1s ease 3.5s backwards;
+}
+
+
+@-moz-keyframes slide /* Firefox */
+{
+from {height: 500px;}
+to {height: 0px;}
+}
+
+@-webkit-keyframes slide /* Safari and Chrome */
+{
+from {height: 500px;}
+to {height: 0px;}
+}
+
+@-o-keyframes slide /* Opera */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-ms-keyframes slide /* IE10 */
+{
+from {height: 500px;}
+to {height: 0px;}
+}
+
+@keyframes slide
+{
+from {height: 500px;}
+to {height: 0px;}
+}
+
       `;
   }
 }
 
-window.customElements.define(GooglePage.is, GooglePage);
+window.customElements.define(UsersPage.is, UsersPage);

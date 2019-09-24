@@ -67,7 +67,7 @@ class ListItem extends LitElement {
         margin:0 0.5rem;
         padding:0;
     }
-    @media (max-width: 576px) and (orientation:portrait) {
+    @media (max-width: 1200px) {
         .lists {
             padding:0 1rem;
             margin-bottom:5rem;

@@ -85,16 +85,19 @@ export class AddItem extends LitElement {
     return `
     .add {
         position: fixed;
-        left: 2rem;
+/*        left: 2rem;
         top: 2rem;
-        bottom: 2rem;
+        bottom: 2rem;*/
         background: #004481;
         width:350px;
         padding:1.5rem;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        border-radius:1rem;
+        border-radius:0rem;
+        height: 100%;
+        top: 0;
+        left: 0;
     }
     .add input {
         border:none;
@@ -176,7 +179,7 @@ export class AddItem extends LitElement {
       letter-spacing:3px;
       text-transform:uppercase;
     }
-    @media (max-width: 576px) and (orientation:portrait) {
+    @media (max-width: 1200px) {
       .add {
         position: relative;
         width:auto;

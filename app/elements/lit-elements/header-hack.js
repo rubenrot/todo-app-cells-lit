@@ -29,15 +29,15 @@ class HeaderHack extends CellsPage {
 
   handleClickLink(page) {
 
-    if (page === 'todo-app') {
-      this.publish('google-channel',
+    if (page === 'todo') {
+      this.publish('todo-channel',
         {
-          page: 'google-page',
+          page: 'todo-page',
           additionalData: 'rot'
         });
-      this.navigate('enterprise');
+      this.navigate(page);
     } else {
-      this.navigate('google');
+      this.navigate(page);
     }
 
 
@@ -60,8 +60,8 @@ class HeaderHack extends CellsPage {
         <h1 class="app-title">Welcome to Ninja Hack</h1>
       </header>
       <div class="app-links">
-        <button @click="${() => this.handleClickLink('todo-app')}">Todo App</button>
-        <button @click="${() => this.handleClickLink('ajax-users')}">Users</button>
+        <button class="hbl-btn" @click="${() => this.handleClickLink('todo')}">Todo App</button>
+        <button class="hbl-btn" @click="${() => this.handleClickLink('users')}">Users</button>
       </div>
       <div id="outlet"></div>
         
@@ -110,6 +110,56 @@ class HeaderHack extends CellsPage {
       a {
         color: #fc4482;
       }
+      .hbl-btn {
+  cursor: pointer;
+  height: 40px;
+  padding: 12px 40px;
+  margin: 32px 0 16px;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: center;
+  color: #FFFFFF;
+  background-image: linear-gradient(100deg, #1464A5 50%, #1973B8 50%);
+  background-size: 250% 100% !important;
+  background-position: right !important;
+  transition: all 0.5s ease;
+  border: none;
+      outline: none;
+}
+
+.hbl-btn.secondary {
+  background-image: linear-gradient(100deg, #052954 50%, #043263 50%);
+}
+
+.hbl-btn.link {
+  color: #1973B8;
+  background: transparent;
+}
+
+.hbl-btn.link:hover {
+  color: #004481;
+}
+
+.hbl-btn[disabled] {
+  background: #E9E9E9;
+  color: #BDBDBD;
+  cursor: not-allowed;
+}
+
+button:hover.hbl-btn {
+  background-position: left !important;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input {
+  outline: none;
+  border: none;
+}
     `;
   }
 }

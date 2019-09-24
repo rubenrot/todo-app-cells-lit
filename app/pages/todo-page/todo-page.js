@@ -6,9 +6,9 @@ import '../../elements/lit-elements/list-item.js';
 import 'lodash/lodash.min.js';
 import '../../elements/lit-elements/header-hack.js';
 
-class EnterprisePage extends CellsPage {
+class TodoPage extends CellsPage {
   static get is() {
-    return 'enterprise-page';
+    return 'todo-page';
   }
 
   static get properties() {
@@ -66,11 +66,11 @@ class EnterprisePage extends CellsPage {
       localStorage.setItem('todo-list', JSON.stringify(this.todoList));
     });
 
-    this.subscribe('google-channel', data => {
-      const { fromObj } = data;
+    this.subscribe('todo-channel', data => {
+      const {fromObj} = data;
       console.log(data);
-      if(data.page === 'google-page'){
-        console.log('Evento recibido - Enterprise Page');
+      if (data.page === 'todo-page') {
+        console.log('Evento recibido - Todo Page');
       }
     });
   }
@@ -86,8 +86,11 @@ class EnterprisePage extends CellsPage {
           <div slot="app__main" class="todo-app-container">
             <div>
             <header-hack></header-hack>
-                  <add-item></add-item>
-                  <list-item .todoList=${this.todoList}></list-item>
+              <div>
+                <add-item></add-item>
+                <list-item .todoList=${this.todoList}></list-item>
+              </div>
+                 
             </div>
               
           </div>
@@ -161,7 +164,7 @@ class EnterprisePage extends CellsPage {
   
       /** Portrait Mobile **/
   
-      @media (max-width: 576px) and (orientation:portrait) {
+      @media (max-width: 1198px) {
         html {
           font-size: 14px;
         }
@@ -188,4 +191,4 @@ class EnterprisePage extends CellsPage {
   }
 }
 
-window.customElements.define(EnterprisePage.is, EnterprisePage);
+window.customElements.define(TodoPage.is, TodoPage);
