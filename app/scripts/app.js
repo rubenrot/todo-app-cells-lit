@@ -3,11 +3,12 @@
 
   window.CellsPolymer.start({
     routes: {
-      'login': '/',
+      'login': '/login',
       'todo': '/todo',
       'users': '/users',
       'home': '/home',
-      'another': '/another'
+      'another': '/another',
+      'dash': '/'
 
 
     }

@@ -1,4 +1,6 @@
 import {LitElement, html,} from 'lit-element';
+import {getData} from '../../elements/services/request-service';
+
 
 export class AddItem extends LitElement {
   static get is() {
@@ -35,6 +37,11 @@ export class AddItem extends LitElement {
   }
 
   onAddItem() {
+
+    getData().then(data => {
+      console.log('getData', data);
+    });
+
     if (this.todoItem.length > 0) {
       let storedTodoList = JSON.parse(localStorage.getItem('todo-list'));
       storedTodoList = storedTodoList === null ? [] : storedTodoList;
